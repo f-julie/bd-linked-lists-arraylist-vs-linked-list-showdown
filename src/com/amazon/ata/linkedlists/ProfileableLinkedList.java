@@ -9,7 +9,8 @@ import java.util.LinkedList;
  * PARTICIPANTS: Implement all methods that throw UnsupportedOperationException in any order.
  */
 public class ProfileableLinkedList implements ProfileableList {
-    private LinkedList<Double> list = new LinkedList<>();
+    // Default in java is a double linked list
+    private LinkedList<Double> list = new LinkedList<>(); // Data type double can be for double or single linked list
 
     @Override
     public String getListImplementationType() {
@@ -18,22 +19,29 @@ public class ProfileableLinkedList implements ProfileableList {
 
     @Override
     public void addFirst(Double data) {
-        throw new UnsupportedOperationException();
+        list.add(0, data);
+        // Another option
+        //list.addFirst(data);
+        //throw new UnsupportedOperationException();
     }
 
     @Override
     public void addLast(Double data) {
-        throw new UnsupportedOperationException();
+        list.add(data);
+        //throw new UnsupportedOperationException();
     }
 
     @Override
     public Double getFirst() {
-        throw new UnsupportedOperationException();
+        return list.get(0);
+        //throw new UnsupportedOperationException();
     }
 
     @Override
     public Double getMiddle() {
-        throw new UnsupportedOperationException();
+        int middle = list.size() / 2;
+        return list.get(middle);
+        //throw new UnsupportedOperationException();
     }
 
     @Override
@@ -44,5 +52,6 @@ public class ProfileableLinkedList implements ProfileableList {
     @Override
     public void addAll(Collection<Double> collection) {
         this.list.addAll(collection);
+        //throw new UnsupportedOperationException();
     }
 }
